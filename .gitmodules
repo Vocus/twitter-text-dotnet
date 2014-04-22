@@ -1,0 +1,6 @@
+[submodule "test-data/twitter-text-conformance"]
+	path = test-data/twitter-text-conformance
+	url = https://github.com/twitter/twitter-text-conformance
+[submodule "lib/NUnit"]
+	path = lib/NUnit
+	url = https://github.com/Vocus/NUnit.git
