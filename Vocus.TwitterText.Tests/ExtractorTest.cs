@@ -597,6 +597,36 @@ namespace Vocus.TwitterText.Tests
             }
         }
 
+        [Test, TestCaseSource("ClientUrlExtractionTests")]
+        public void TestClientUrlExtraction(StringListOutTestCase test)
+        {
+            var actual = extractor.ExtractURLs(test.Input);
+            Assert.AreEqual(test.Expected, actual, test.Description);
+            
+        }
+        public StringListOutTestCase[] ClientUrlExtractionTests
+        {
+            get
+            {
+                return new StringListOutTestCase[]
+                    {
+                        new StringListOutTestCase()
+                            {
+                                Input = "Check out my link http://www.alfred.com/Products/RefinedListing.aspx?q=@SKU=(98-40784,98-42565)",
+                                Expected = new List<String>() { "http://www.alfred.com/Products/RefinedListing.aspx?q=@SKU=(98-40784,98-42565)" },
+                                Description = "Query parameters with at symbol and parenthesis at the end"
+                            },
+                        new StringListOutTestCase()
+                            {
+                                Input = "Check out my link http://www.alfred.com/Products/RefinedListing.aspx?q=@SKU=(98-40784,98-42565)",
+                                Expected = new List<String>() { "http://www.alfred.com/Products/RefinedListing.aspx?q=@SKU=(98-40784,98-42565" },
+                                Description = "Query parameters with at symbol and parenthesis at the end loses last parenthesis"
+                            },
+                            
+                    };
+            }
+        }
+
         [Test]
         public void TestUrlWithSupplementaryCharacters()
         {
