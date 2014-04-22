@@ -19,7 +19,3 @@ https://github.com/vocus/twitter-text-csharp/issues
 Copyright 2012 Vocus, Inc.
 
 Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0
-
-## 3rd party dependencies not on Github
-
-YamlSerializer from http://yamlserializer.codeplex.com/
