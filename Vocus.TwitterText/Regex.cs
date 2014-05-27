@@ -195,8 +195,8 @@ namespace Vocus.TwitterText
 
         public static readonly TRE.Regex INVALID_MENTION_MATCH_END = new TRE.Regex("^(?:[" + AT_SIGNS_CHARS + LATIN_ACCENTS_CHARS + "]|://)");
 
-        public static readonly TRE.Regex VALID_URL = new TRE.Regex(VALID_URL_PATTERN_STRING, TRE.RegexOptions.IgnoreCase | TRE.RegexOptions.Compiled);
-        public static readonly TRE.Regex VALID_URL_ASCII = new TRE.Regex(URL_VALID_DOMAIN_ASCII, TRE.RegexOptions.IgnoreCase | TRE.RegexOptions.Compiled);
+        public static readonly TRE.Regex VALID_URL = new TRE.Regex(VALID_URL_PATTERN_STRING, TRE.RegexOptions.IgnoreCase);
+        public static readonly TRE.Regex VALID_URL_ASCII = new TRE.Regex(URL_VALID_DOMAIN_ASCII, TRE.RegexOptions.IgnoreCase);
         public static readonly TRE.Regex INVALID_SHORT_DOMAIN = new TRE.Regex("^" + URL_VALID_DOMAIN_NAME + URL_VALID_CCTLD + "$");
         public static readonly int VALID_URL_GROUP_ALL = 1;
         public static readonly int VALID_URL_GROUP_BEFORE = 2;
