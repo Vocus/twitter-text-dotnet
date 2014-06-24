@@ -592,7 +592,15 @@ namespace Vocus.TwitterText.Tests
                        "www.foo.com/foo/path-with-period./",
                        "www.foo.org.za/foo/bar/688.1",
                        "www.foo.com/bar-path/some.stm?param1=foo;param2=P1|0||P2|0",
-                       "foo.com/bar/123/foo_&_bar/"
+                       "foo.com/bar/123/foo_&_bar/",
+                       "foo-bar.com/bar/",
+                       "www.foo.com/foo-bar/",
+                       "www.foo-bar.com/foo-bar/",
+                       "foo-bar.foo.com/",
+                       "www.foo-bar.foo.com",
+                       "http://foo-bar.foo.com",
+                       "http://www.family-vaccines.org/families/babies/measles-baby?vsmaid=9",
+                       "www.family-vaccines.org/families/babies/measles-baby?vsmaid=9"
                    };
             }
         }
@@ -622,6 +630,19 @@ namespace Vocus.TwitterText.Tests
                                 Expected = new List<String>() { "http://www.alfred.com/Products/RefinedListing.aspx?q=@SKU=(98-40784,98-42565" },
                                 Description = "Query parameters with at symbol and parenthesis at the end loses last parenthesis"
                             },
+                        new StringListOutTestCase()
+                            {
+                                Input = "Check out my link http://www.family-vaccines.org/families/babies/measles-baby?vsmaid=9",
+                                Expected = new List<String>() { "http://www.family-vaccines.org/families/babies/measles-baby?vsmaid=9" },
+                                Description = "dashes in domain with protocol"
+                            },
+                        new StringListOutTestCase()
+                            {
+                                Input = "Check out my link www.family-vaccines.org/families/babies/measles-baby?vsmaid=9",
+                                Expected = new List<String>() { "www.family-vaccines.org/families/babies/measles-baby?vsmaid=9" },
+                                Description = "dashes in domain without protocol"
+                            },
+                            
                             
                     };
             }

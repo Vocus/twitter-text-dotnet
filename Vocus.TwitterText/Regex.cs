@@ -95,7 +95,7 @@ namespace Vocus.TwitterText
         private static readonly String URL_PUNYCODE = "(?:xn--[0-9a-zA-Z]+)";
 
         private static readonly String URL_VALID_DOMAIN_ASCII =
-            "(?:(?:[a-z0-9" + LATIN_ACCENTS_CHARS + "]+)\\.)+" +
+            "(?:(?:[\\-a-z0-9" + LATIN_ACCENTS_CHARS + "]+)\\.)+" +
             "(?:" + URL_VALID_GTLD + "|" + URL_VALID_CCTLD + "|" + URL_PUNYCODE + ")";
   
         private static readonly String URL_VALID_DOMAIN =
